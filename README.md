@@ -1,2 +1,2 @@
-[# pazgen.ru](https://pazgen.ru "перейти на сайт")
+[# pazgen.ru](https://pazgen.ru "перейти на сайт")  
 Простой генератор паролей

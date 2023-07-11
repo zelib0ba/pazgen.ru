@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="RU">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Простой генератор паролей. У нас, нет рекламы. Мы не сохраненяем сгенерированные пароли. "/>
+        <meta name="author" content="Алексей Сурин">
+        <title>Простой генератор паролей.</title>
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="./assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#b91d47">
+        <meta name="theme-color" content="#ffffff">
+        <link rel="stylesheet" href="./assets/css/bulma.min.css"/>
+        <script src="./assets/js/pazzgen.js"></script>
+    </head>
+
+    <body>
+        <div class="container is-max-desktop">
+            <div class="columns is-mobile is-centered mt-5 ml-2 mr-2">
+                <div class="column is-half">
+                    <button class="button is-small is-fullwidth is-success is-outlined" onclick="SimplePass();">новые пароли</button>
+                </div>
+                <div class="column is-half">
+                    <button class="button is-small is-fullwidth is-info is-outlined" onclick="spCH();">
+                        + спецсимволы</button>
+                </div>
+            </div>
+            <div class="columns mt-2">
+                <div class="column is-3">
+                    <div class="is-size-7 pl-1 has-text-centered has-text-weight-bold is-family-sans-serif">12 символов
+                    </div>
+                    <div class="box is-family-code has-text-centered" id="pass12"></div>
+                </div>
+                <div class="column is-3">
+                    <div class="is-size-7 pl-1 has-text-centered has-text-weight-bold is-family-sans-serif">10 символов
+                    </div>
+                    <div class="box is-family-code has-text-centered" id="pass10"></div>
+                </div>
+                <div class="column is-2">
+                    <div class="is-size-7 pl-1 has-text-centered has-text-weight-bold is-family-sans-serif">8 символов</div>
+                    <div class="box is-family-code has-text-centered" id="pass8"></div>
+                </div>
+                <div class="column is-2">
+                    <div class="is-size-7 pl-1 has-text-centered has-text-weight-bold is-family-sans-serif">6 символов</div>
+                    <div class="box is-family-code has-text-centered" id="pass6"></div>
+                </div>
+                <div class="column is-2">
+                    <div class="is-size-7 pl-1 has-text-centered has-text-weight-bold is-family-sans-serif">4 символа</div>
+                    <div class="box is-family-code has-text-centered" id="pass4"></div>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="is-size-7 has-text-centered is-family-code">PaZZgen created with
+                        <a href="https://bulma.io">bulma</a>
+                        &amp;
+                        <span class="has-text-danger-dark">&#10084;</span>
+                        by
+                        <a href="https://surin.ru">Alexey Surin</a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                // как нравится, так и пишу :)
+                document.getElementById("pass12").innerHTML = print_passwords(10, 12, 0);
+                document.getElementById("pass10").innerHTML = print_passwords(10, 10, 0);
+                document.getElementById("pass6").innerHTML = print_passwords(10, 6),
+                0;
+                document.getElementById("pass8").innerHTML = print_passwords(10, 8, 0);
+                document.getElementById("pass4").innerHTML = print_passwords(10, 4, 0);
+
+                function SimplePass() {
+                    document.getElementById("pass12").innerHTML = print_passwords(10, 12, 0);
+                    document.getElementById("pass10").innerHTML = print_passwords(10, 10, 0);
+                    document.getElementById("pass6").innerHTML = print_passwords(10, 6, 0);
+                    document.getElementById("pass8").innerHTML = print_passwords(10, 8, 0);
+                    document.getElementById("pass4").innerHTML = print_passwords(10, 4, 0);
+                }
+
+                function spCH() {
+                    document.getElementById("pass12").innerHTML = print_passwords(10, 12, 1);
+                    document.getElementById("pass10").innerHTML = print_passwords(10, 10, 1);
+                    document.getElementById("pass6").innerHTML = print_passwords(10, 6, 1);
+                    document.getElementById("pass8").innerHTML = print_passwords(10, 8, 1);
+                    document.getElementById("pass4").innerHTML = print_passwords(10, 4, 1);
+                }
+            </script>
+        </body>
+    </body>
+</html>
